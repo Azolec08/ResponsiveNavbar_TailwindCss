@@ -3,7 +3,7 @@ import "../style/App.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 function Navbar() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   const handleShow = () => {
     setShow(!show);
@@ -50,18 +50,27 @@ function Navbar() {
       <div
         className={
           show
-            ? "hidden_animation  text-white transition-all duration-500"
-            : "show_animation bg-gray-400 text-white transition-all duration-500"
+            ? "show_animation bg-gray-400 text-white transition-all duration-500"
+            : "hidden_animation text-white transition-all duration-500"
         }
       >
         <ul>
-          <li className="hover:bg-gray-200 hover:text-black h-9 flex items-center cursor-pointer ">
+          <li
+            className="hover:bg-gray-200 hover:text-black h-9 flex items-center cursor-pointer "
+            onClick={handleShow}
+          >
             <span className="px-4">Home</span>
           </li>
-          <li className="hover:bg-gray-200 hover:text-black h-9 flex items-center cursor-pointer">
+          <li
+            className="hover:bg-gray-200 hover:text-black h-9 flex items-center cursor-pointer"
+            onClick={handleShow}
+          >
             <span className="px-4">Store</span>
           </li>
-          <li className="hover:bg-gray-200 hover:text-black h-9 flex items-center cursor-pointer">
+          <li
+            className="hover:bg-gray-200 hover:text-black h-9 flex items-center cursor-pointer"
+            onClick={handleShow}
+          >
             <span className="px-4">About</span>
           </li>
         </ul>
