@@ -1,10 +1,12 @@
-import Navbar from "./Components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
 function App() {
   return (
-    <>
-      <Navbar />
-      <div className="h-screen bg-hero-bg"></div>
-    </>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </div>
   );
 }
 
