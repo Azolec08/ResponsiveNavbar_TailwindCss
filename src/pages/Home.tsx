@@ -16,6 +16,7 @@ const Home = () => {
   };
   return (
     <div>
+      <h1>Mark Angelo Celoza</h1>
       <div>{state.pay}</div>
       <button onClick={handleIncrement}>Increment</button>
       {state.switch ? <div>mark</div> : <div>becca</div>}
