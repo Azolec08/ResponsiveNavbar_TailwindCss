@@ -1,10 +1,16 @@
-import Navbar from "./Components/Navbar";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import RootLayout from "./RootLayout";
+
 function App() {
   return (
-    <>
-      <Navbar />
-      <div className="h-screen bg-hero-bg"></div>
-    </>
+    <div>
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route path="/" element={<Home />} />
+        </Route>
+      </Routes>
+    </div>
   );
 }
 
