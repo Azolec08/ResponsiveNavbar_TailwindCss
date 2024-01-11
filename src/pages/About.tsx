@@ -7,6 +7,7 @@ const About = () => {
 
   return (
     <div>
+      <h1>Mark Celoza</h1>
       <div>{mySwitch ? "becaa" : "shella"}</div>
       <button onClick={switchName}>ClickChange</button>
       <input type="text" value={nameVal} onChange={nameValue} />
