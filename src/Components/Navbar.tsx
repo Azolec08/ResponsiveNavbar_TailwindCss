@@ -2,12 +2,19 @@ import { useState } from "react";
 import "../style/App.scss";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useGlobalContext } from "../contextStore/GlobalContext";
+import Sidebar from "./Sidebar/Sidebar";
+import "./Sidebar/sidebar.scss";
+
 function Navbar() {
+  const { state, dispatch } = useGlobalContext();
+
   const [show, setShow] = useState(false);
 
   const handleShow = () => {
     setShow(!show);
   };
+
   return (
     <>
       <div
@@ -36,7 +43,10 @@ function Navbar() {
           md:col-span-2 
           "
         >
-          <span className="cursor-pointer">
+          <span
+            onClick={() => dispatch({ type: "openNav" })}
+            className="cursor-pointer"
+          >
             <ShoppingCartIcon />
           </span>
           <span
@@ -74,6 +84,10 @@ function Navbar() {
             <span className="px-4">About</span>
           </li>
         </ul>
+      </div>
+
+      <div className={state.open ? "active" : "hide"}>
+        <Sidebar />
       </div>
     </>
   );

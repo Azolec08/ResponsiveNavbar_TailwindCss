@@ -40,6 +40,10 @@ const reducer: Reducer<stateType, actionType> = (state, action) => {
       return { ...state, switch: action.payload };
     case "nameValue":
       return { ...state, nameVal: action.payload };
+    case "openNav":
+      return { ...state, open: !state.open };
+    case "openFalse":
+      return { ...state, open: false };
     default:
       return state;
   }
@@ -51,6 +55,7 @@ export const CreateGlobalContext = ({ children }: childrenType) => {
     pay: 0,
     switch: false,
     nameVal: "",
+    open: false,
   };
 
   const [state, dispatch] = useReducer(reducer, initialize);
